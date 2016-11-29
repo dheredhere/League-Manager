@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
 
   def index
     @users = User.all
@@ -10,6 +9,13 @@ class UsersController < ApplicationController
     unless @user == current_user
       redirect_to root_path, :alert => "Access denied."
     end
+  end
+
+  def join
+    u = current_user
+    u.league_id = params[:id]
+    u.save!
+    redirect_to current_user
   end
 
 end

@@ -23,6 +23,8 @@ gem 'devise'
 gem 'foundation-rails', '~> 5.5'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'binding_of_caller'
+
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil

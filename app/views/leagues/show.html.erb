@@ -1,0 +1,25 @@
+<h1>Leagues#show</h1>
+
+<td><%= button_to "Logout", user_path(id: "sign_out"), :class => "button small", :method => :delete %></td>
+<td><%= button_to "View User", user_path(id: current_user.id), :class => "button small", :method => :get %></td>
+<div class="container">
+  <div class="row">
+    <h3>League</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @Leagues.each do |league| %>
+            <tr>
+              <td><%= link_to league.name, league %></td>
+              <td><%= button_to "Join", join_path(id: league.id), :class => "button small", :method => :patch %></td>
+
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<p>Find me in app/views/leagues/show.html.erb</p>
