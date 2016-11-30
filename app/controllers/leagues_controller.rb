@@ -11,9 +11,12 @@ class LeaguesController < ApplicationController
   end
 
   def create
- 	l = League.new
+ 	  l = League.new
   	l.name = params[:league][:name]
   	l.save!
+    current_user.league_id = l.id
+    current_user.save!
+
   	redirect_to "/"
   end
 
