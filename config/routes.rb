@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :leagues
+  resources :matches
 
   post 'create', to: 'leagues#create'
+  post 'create_match', to: 'matches#create'
   patch 'join', to: 'users#join'
 
 end
