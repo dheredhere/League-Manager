@@ -14,7 +14,7 @@ class MatchesController < ApplicationController
     m = Match.new
     m.league_id = current_user.league_id
     m.player1_id = current_user.id
-    m.player2_id = params[:match][:user_id]
+    m.player2_id = params[:user][:user_id]
     if params[:match][:match_result] == "Win"
       m.result = 0
     else
