@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     u = current_user
     u.league_id = params[:id]
     u.save!
-    redirect_to current_user
+    redirect_to "/"
   end
 
 end

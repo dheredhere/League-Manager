@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <h3>League</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @leagues.each do |league| %>
+            <tr>
+              <td><%= link_to league.name, league %></td>
+              <td><%= button_to "Join", join_path(id: league.id), :class => "button small", :method => :patch %></td>
+
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
