@@ -1,0 +1,5 @@
+<%= simple_form_for :match, :url => create_match_path do |f| %>
+  <%= select(:user, :user_id, League.find(current_user.league_id).users.all.collect {|pp| [ pp.name, pp.id ] }) %>
+  <%= f.select(:match_result, Match::MATCH_RESULTS) %>
+  <%= f.button :submit %>
+<% end %>
