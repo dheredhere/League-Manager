@@ -18,6 +18,21 @@
         </tbody>
       </table>
 
+      <h3>Match History</h3>
+      <table class="table">
+        <tbody>
+          <% currentLeague.matches.each do |match| %>
+            <tr>
+              <% if match.result == 0 %>
+                <% result = " won against " %>
+                <% else result = " lost against " %>
+                <%end%>
+              <td><%= User.find(match.player1_id).name + result + User.find(match.player2_id).name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
 </div>
 <% if current_user.id == currentLeague.creator_id %>
   <td><%= button_to "Delete League", delete_league_path(id: currentLeague), :class => "button medium", :method => :patch %></td>
