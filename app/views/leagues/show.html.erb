@@ -1,6 +1,7 @@
 <% currentLeague = League.find(params[:id]) %>
 <% users = currentLeague.users %>
 <h1><%=currentLeague.name %></h1>
+<h3>Owner: <%= User.find(currentLeague.creator_id).name %></h3>
 <!-- 
 <td><%= button_to "Logout", user_path(id: "sign_out"), :class => "button small", :method => :delete %></td>
 <td><%= button_to "View User", user_path(id: current_user.id), :class => "button small", :method => :get %></td> -->
@@ -18,5 +19,6 @@
       </table>
 
 </div>
-
-<p>Find me in app/views/leagues/show.html.erb</p>
+<% if current_user.id == currentLeague.creator_id %>
+  <td><%= button_to "Delete League", delete_league_path(id: currentLeague), :class => "button medium", :method => :patch %></td>
+<% end %>

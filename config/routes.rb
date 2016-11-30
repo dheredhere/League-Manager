@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   post 'create', to: 'leagues#create'
   post 'create_match', to: 'matches#create'
   patch 'join', to: 'users#join'
+  patch 'delete_league', to: 'leagues#destroy'
 
 end
