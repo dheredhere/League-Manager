@@ -10,12 +10,16 @@ puts 'CREATED ADMIN USER: ' << user.email
 
 #make leagues
 %w(Intramural Intermediate Competitive).each do |name|
-  League.create name: name, creator_id: 1 
+  League.create name: name, creator_id: 2 
 end
 
 #make players
 %w(Federer Nadal Murray Henman Djokovic).each do |name|
   User.create name: name, email: name+"@league.com", password: 'password', password_confirmation: 'password', league_id: 2
+end
+
+%w(Hrishi Faith Chris Jim).each do |name|
+  User.create name: name, email: name+"@league.com", password: 'password', password_confirmation: 'password', league_id: 1
 end
 
 
