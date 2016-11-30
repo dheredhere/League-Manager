@@ -3,6 +3,5 @@
 <p>Email: <%= @user.email if @user.email %></p>
 
 <p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
-<td><%= button_to "View Leagues", leagues_path, :class => "button small", :method => :get %></td>
-<div><%= button_to "Create League", new_league_path, :class => "button medium", :method => :get %></div>
-<%= League.find(@user.league_id).name %></td>
+
+<p>League(s): <%= League.find(@user.league_id).name %></td></p>
